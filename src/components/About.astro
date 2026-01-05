@@ -1,0 +1,239 @@
+---
+---
+
+<section class="about section" id="sobre">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-content">
+        <span class="about-label">Sobre o Evento</span>
+        <h2 class="section-title">
+          O encontro que vai <span class="highlight">transformar</span> a sua visão do setor
+        </h2>
+        <p class="about-text">
+          O <strong>Boost Hospitality</strong> é um evento exclusivo organizado pela Host Wise, 
+          pensado para profissionais e investidores do setor de Alojamento Local que procuram 
+          elevar os seus negócios ao próximo nível.
+        </p>
+        <p class="about-text">
+          Durante uma manhã intensiva na icónica Casa da Música, terá acesso a apresentações 
+          de especialistas do setor, dados de mercado atualizados, estratégias de otimização 
+          de receita e as últimas tendências em tecnologia e inteligência artificial aplicadas 
+          à hotelaria.
+        </p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-number">6+</span>
+            <span class="stat-label">Sessões</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Speakers</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">4h</span>
+            <span class="stat-label">De Conteúdo</span>
+          </div>
+        </div>
+        <a href="#inscricao" class="btn btn-primary">
+          Garanta o Seu Lugar
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+      <div class="about-visual">
+        <div class="visual-card">
+          <div class="visual-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5"></path>
+              <path d="M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <h3>Conhecimento Prático</h3>
+          <p>Insights aplicáveis ao seu negócio desde o primeiro dia</p>
+        </div>
+        <div class="visual-card">
+          <div class="visual-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3>Networking</h3>
+          <p>Conecte-se com os principais players do mercado</p>
+        </div>
+        <div class="visual-card featured">
+          <div class="visual-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <h3>Exclusividade</h3>
+          <p>Acesso a informação e dados não disponíveis ao público</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="about-decoration"></div>
+</section>
+
+<style>
+  .about {
+    background: var(--color-gray-900);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-decoration {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: radial-gradient(
+      ellipse at top right,
+      rgba(0, 201, 167, 0.08) 0%,
+      transparent 60%
+    );
+    pointer-events: none;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .about-label {
+    display: inline-block;
+    color: var(--color-accent);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+  }
+
+  .about-content .section-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .about-content .highlight {
+    color: var(--color-accent);
+  }
+
+  .about-text {
+    color: var(--color-gray-300);
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.8;
+  }
+
+  .about-text strong {
+    color: var(--color-light);
+  }
+
+  .about-stats {
+    display: flex;
+    gap: 2.5rem;
+    margin: 2.5rem 0;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: var(--color-gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.5rem;
+  }
+
+  .about-visual {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .visual-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .visual-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(0, 201, 167, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .visual-card.featured {
+    grid-column: span 2;
+    background: linear-gradient(135deg, rgba(0, 201, 167, 0.1) 0%, rgba(0, 201, 167, 0.02) 100%);
+    border-color: rgba(0, 201, 167, 0.2);
+  }
+
+  .visual-icon {
+    color: var(--color-accent);
+    margin-bottom: 1.25rem;
+  }
+
+  .visual-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-light);
+  }
+
+  .visual-card p {
+    color: var(--color-gray-400);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 1024px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .about-visual {
+      order: -1;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .about-stats {
+      gap: 1.5rem;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+    }
+
+    .about-visual {
+      grid-template-columns: 1fr;
+    }
+
+    .visual-card.featured {
+      grid-column: span 1;
+    }
+  }
+</style>

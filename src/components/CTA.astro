@@ -1,0 +1,202 @@
+---
+---
+
+<section class="cta section" id="inscricao">
+  <div class="cta-background">
+    <div class="cta-gradient"></div>
+    <div class="cta-pattern"></div>
+  </div>
+  <div class="container">
+    <div class="cta-content">
+      <span class="cta-label">Inscrição</span>
+      <h2 class="cta-title">
+        Pronto para impulsionar o seu negócio?
+      </h2>
+      <p class="cta-text">
+        Junte-se a nós no dia 25 de Março na Casa da Música e faça parte 
+        deste evento exclusivo. Vagas limitadas!
+      </p>
+      <div class="cta-details">
+        <div class="cta-detail">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <div>
+            <strong>Data</strong>
+            <span>25 de Março de 2026</span>
+          </div>
+        </div>
+        <div class="cta-detail">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <div>
+            <strong>Horário</strong>
+            <span>09h00 - 13h00</span>
+          </div>
+        </div>
+        <div class="cta-detail">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <div>
+            <strong>Local</strong>
+            <span>Casa da Música, Sala 2</span>
+          </div>
+        </div>
+      </div>
+      <a href="https://forms.gle/example" target="_blank" rel="noopener noreferrer" class="btn btn-primary cta-button">
+        Inscreva-se Gratuitamente
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
+      <p class="cta-note">
+        * Evento gratuito com vagas limitadas. A inscrição está sujeita a confirmação.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta {
+    position: relative;
+    background: var(--color-dark);
+    overflow: hidden;
+  }
+
+  .cta-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .cta-gradient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 201, 167, 0.15) 0%,
+      transparent 60%
+    );
+  }
+
+  .cta-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta-label {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: rgba(0, 201, 167, 0.15);
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 50px;
+    margin-bottom: 2rem;
+  }
+
+  .cta-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: var(--color-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-text {
+    font-size: 1.25rem;
+    color: var(--color-gray-300);
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+
+  .cta-details {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .cta-detail {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+  }
+
+  .cta-detail svg {
+    color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  .cta-detail div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .cta-detail strong {
+    font-size: 0.75rem;
+    color: var(--color-gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .cta-detail span {
+    font-size: 0.95rem;
+    color: var(--color-light);
+    font-weight: 500;
+  }
+
+  .cta-button {
+    font-size: 1.1rem;
+    padding: 1.25rem 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-note {
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+  }
+
+  @media (max-width: 640px) {
+    .cta-details {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cta-detail {
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+</style>

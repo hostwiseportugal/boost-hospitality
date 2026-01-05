@@ -1,0 +1,312 @@
+---
+const agenda = [
+  {
+    start: "08h30",
+    end: "09h15",
+    session: "Check-In",
+    format: "Receção",
+    title: "Abertura de Check-In & Welcome Kit",
+    speaker: "Diogo China e Carolina?",
+    description: "Check-in e entrega do Welcome Kit a cada participante"
+  },
+  {
+    start: "09h15",
+    end: "09h40",
+    session: "Sessão I",
+    format: "Abertura",
+    title: "Crescimento do turismo enquadrado com o planeamento urbano municipal: presente e futuro",
+    speaker: "Ricardo Valente",
+    description: "Visão estratégica sobre cohabitação planeamento urbano e turismo - presente e futuro. Porto, Portugal e Europa."
+  },
+  {
+    start: "09h45",
+    end: "10h10",
+    session: "Sessão II",
+    format: "Apresentação individual",
+    title: "Insights e dados chave do mercado sobre 2025 e indicadores e trends futuras",
+    speaker: "AirDNA, Key Data ou Renato Chainho (HW)",
+    description: "Análise de indicadores chave de mercado em 2025 e perspetiva de evolução futura e trends"
+  },
+  {
+    start: "10h15",
+    end: "10h40",
+    session: "Sessão III",
+    format: "Entrevista 1to1",
+    title: "Como conseguir uma gestão operacional com qualidade de serviço aliada a um custo sustentável?",
+    speaker: "André Ferreira CEO Hoteis Moov?",
+    description: "Como conseguir assegurar uma execução logística operacional de qualidade com eficiência de custos?"
+  },
+  {
+    start: "10h45",
+    end: "11h30",
+    session: "Pausa",
+    format: "Coffee Break & Networking",
+    title: "Coffee Break & Interação com Parceiros do Setor",
+    speaker: "The Host: Gonçalo Cruz",
+    description: "Zona de coffee break + área de parceiros/fornecedores na sala principal",
+    isBreak: true
+  },
+  {
+    start: "11h30",
+    end: "12h00",
+    session: "Sessão IV",
+    format: "Apresentação individual",
+    title: "Otimização de receita: o que fazer e o que não fazer?",
+    speaker: "PriceLabs ou Beyond ou Diogo Cardoso (HW)",
+    description: "Estratégias de pricing: porquê, como e com que resultados?"
+  },
+  {
+    start: "12h05",
+    end: "12h30",
+    session: "Sessão V",
+    format: "Entrevista 1to1",
+    title: "O impacto da tecnologia no negócio - O que funciona e porquê",
+    speaker: "Guesty",
+    description: "Como escolher a tecnologia adequada e aplicar de forma eficaz neste negócio?"
+  },
+  {
+    start: "12h35",
+    end: "12h55",
+    session: "Sessão VI",
+    format: "Apresentação individual",
+    title: "O que muda no mercado de Hospitality com a utilização de AI? Qual a oportunidade para 2026?",
+    speaker: "Renato Chainho (HW)",
+    description: "Onde já faz sentido aplicar AI neste negócio e exemplos de utilização com sucesso"
+  }
+];
+---
+
+<section class="agenda section" id="agenda">
+  <div class="container">
+    <div class="agenda-header">
+      <span class="agenda-label">Programa</span>
+      <h2 class="section-title">Agenda do Evento</h2>
+      <p class="section-subtitle">
+        Uma manhã intensiva com as melhores práticas e insights do setor
+      </p>
+    </div>
+
+    <div class="agenda-timeline">
+      {agenda.map((item, index) => (
+        <div class={`agenda-item ${item.isBreak ? 'is-break' : ''}`}>
+          <div class="agenda-time">
+            <span class="time-start">{item.start}</span>
+            <span class="time-separator">—</span>
+            <span class="time-end">{item.end}</span>
+          </div>
+          <div class="agenda-content">
+            <div class="agenda-meta">
+              <span class="session-badge">{item.session}</span>
+              <span class="format-tag">{item.format}</span>
+            </div>
+            <h3 class="agenda-title">{item.title}</h3>
+            <p class="agenda-description">{item.description}</p>
+            <div class="agenda-speaker">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span>{item.speaker}</span>
+            </div>
+          </div>
+          <div class="agenda-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .agenda {
+    background: var(--color-dark);
+    position: relative;
+  }
+
+  .agenda-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .agenda-label {
+    display: inline-block;
+    color: var(--color-accent);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+  }
+
+  .agenda-header .section-subtitle {
+    margin: 0 auto;
+  }
+
+  .agenda-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .agenda-item {
+    display: grid;
+    grid-template-columns: 140px 1fr 40px;
+    gap: 2rem;
+    padding: 2rem 0;
+    position: relative;
+  }
+
+  .agenda-item:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .agenda-item.is-break {
+    background: linear-gradient(90deg, transparent, rgba(0, 201, 167, 0.05), transparent);
+    margin: 0 -2rem;
+    padding: 2rem;
+    border-radius: 12px;
+    border: none;
+  }
+
+  .agenda-time {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 0.25rem;
+  }
+
+  .time-start {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-light);
+  }
+
+  .time-separator {
+    color: var(--color-gray-600);
+    margin: 0.25rem 0;
+  }
+
+  .time-end {
+    font-size: 0.95rem;
+    color: var(--color-gray-400);
+  }
+
+  .agenda-content {
+    flex: 1;
+  }
+
+  .agenda-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .session-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--color-accent);
+    color: var(--color-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 4px;
+  }
+
+  .is-break .session-badge {
+    background: rgba(0, 201, 167, 0.2);
+    color: var(--color-accent);
+  }
+
+  .format-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-gray-300);
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .agenda-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-light);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+
+  .agenda-description {
+    color: var(--color-gray-400);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .agenda-speaker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .agenda-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.5rem;
+  }
+
+  .marker-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    box-shadow: 0 0 20px rgba(0, 201, 167, 0.4);
+    flex-shrink: 0;
+  }
+
+  .marker-line {
+    width: 2px;
+    flex: 1;
+    background: linear-gradient(to bottom, var(--color-accent), transparent);
+    margin-top: 0.5rem;
+  }
+
+  .agenda-item:last-child .marker-line {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .agenda-item {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .agenda-time {
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .time-separator {
+      margin: 0;
+    }
+
+    .agenda-marker {
+      display: none;
+    }
+
+    .agenda-item.is-break {
+      margin: 0 -1rem;
+      padding: 1.5rem 1rem;
+    }
+  }
+</style>
