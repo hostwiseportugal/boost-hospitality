@@ -3,17 +3,17 @@ const speakers = [
   {
     id: 1,
     name: "Ricardo Valente",
-    role: "Vereador do Turismo",
-    company: "Câmara Municipal do Porto",
-    image: "RV",
+    role: "Diretor Geral",
+    company: "Savills Porto",
+    image: "/images/speakers/ricardo-valente.jpeg",
     bio: "Ricardo Valente é Vereador do Turismo, Comércio, Cultura e Património na Câmara Municipal do Porto. Com vasta experiência em políticas públicas de turismo, tem sido uma voz ativa no debate sobre o equilíbrio entre o crescimento turístico e o planeamento urbano sustentável."
   },
   {
     id: 2,
     name: "Renato Chainho",
-    role: "CEO",
+    role: "CEO e Co-Founder",
     company: "Host Wise",
-    image: "RC",
+    image: "/images/speakers/renato-chainho.webp",
     bio: "Renato Chainho é CEO e fundador da Host Wise, empresa líder em gestão de Alojamento Local em Portugal. Com mais de 620 unidades geridas em 30+ cidades, tem sido pioneiro na aplicação de tecnologia e AI no setor da hospitalidade."
   },
   {
@@ -21,7 +21,7 @@ const speakers = [
     name: "André Ferreira",
     role: "CEO",
     company: "Hoteis Moov",
-    image: "AF",
+    image: "/images/speakers/andre-ferreira.jpeg",
     bio: "André Ferreira lidera a Moov Hotels, uma das cadeias hoteleiras mais inovadoras de Portugal. A sua experiência em gestão operacional de excelência com eficiência de custos tornou-o uma referência no setor."
   },
   {
@@ -29,7 +29,7 @@ const speakers = [
     name: "Gonçalo Cruz",
     role: "Founder",
     company: "The Host",
-    image: "GC",
+    image: "/images/speakers/goncalo-cruz.jpg",
     bio: "Gonçalo Cruz é fundador da The Host, uma plataforma dedicada a conectar profissionais do setor de Alojamento Local. É conhecido pelo seu trabalho em criar comunidade e networking no ecossistema da hospitalidade."
   },
   {
@@ -37,7 +37,7 @@ const speakers = [
     name: "Diogo Cardoso",
     role: "Revenue Manager",
     company: "Host Wise",
-    image: "DC",
+    image: "/images/speakers/diogo-cardoso.jpg",
     bio: "Diogo Cardoso é especialista em Revenue Management e otimização de preços na Host Wise. Com profundo conhecimento em estratégias de pricing dinâmico, tem ajudado dezenas de proprietários a maximizar os seus rendimentos."
   },
   {
@@ -45,7 +45,7 @@ const speakers = [
     name: "Diogo China",
     role: "Operations",
     company: "Host Wise",
-    image: "DX",
+    image: "/images/speakers/diogo-china.jpg",
     bio: "Diogo China é responsável pelas operações na Host Wise, garantindo que cada hóspede tenha uma experiência excecional. A sua atenção ao detalhe e foco no cliente são fundamentais para o sucesso da empresa."
   }
 ];
@@ -65,7 +65,7 @@ const speakers = [
       {speakers.map((speaker) => (
         <button class="speaker-card" data-speaker={JSON.stringify(speaker)}>
           <div class="speaker-image">
-            <span class="speaker-initials">{speaker.image}</span>
+            <img src={speaker.image} alt={speaker.name} />
             <div class="speaker-overlay">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="12" cy="12" r="10"></circle>
@@ -97,7 +97,7 @@ const speakers = [
       </button>
       <div class="modal-header">
         <div class="modal-image">
-          <span class="modal-initials" id="modalInitials"></span>
+          <img id="modalImage" src="" alt="" />
         </div>
         <div class="modal-info">
           <h3 class="modal-name" id="modalName"></h3>
@@ -175,16 +175,10 @@ const speakers = [
     background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
   }
 
-  .speaker-initials {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .speaker-image img {
     width: 100%;
     height: 100%;
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-dark);
+    object-fit: cover;
   }
 
   .speaker-overlay {
@@ -300,20 +294,14 @@ const speakers = [
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+    overflow: hidden;
     flex-shrink: 0;
   }
 
-  .modal-initials {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .modal-image img {
     width: 100%;
     height: 100%;
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-dark);
+    object-fit: cover;
   }
 
   .modal-name {
@@ -369,15 +357,16 @@ const speakers = [
     const modalClose = modal?.querySelector('.modal-close');
     const speakerCards = document.querySelectorAll('.speaker-card');
 
-    const modalInitials = document.getElementById('modalInitials');
+    const modalImage = document.getElementById('modalImage') as HTMLImageElement;
     const modalName = document.getElementById('modalName');
     const modalRole = document.getElementById('modalRole');
     const modalCompany = document.getElementById('modalCompany');
     const modalBio = document.getElementById('modalBio');
 
     function openModal(speaker: any) {
-      if (modal && modalInitials && modalName && modalRole && modalCompany && modalBio) {
-        modalInitials.textContent = speaker.image;
+      if (modal && modalImage && modalName && modalRole && modalCompany && modalBio) {
+        modalImage.src = speaker.image;
+        modalImage.alt = speaker.name;
         modalName.textContent = speaker.name;
         modalRole.textContent = speaker.role;
         modalCompany.textContent = speaker.company;
