@@ -21,7 +21,7 @@
     </h1>
     
     <p class="hero-subtitle animate-fadeInUp delay-3">
-      Um dia de networking, insights e estratégias para transformar a sua gestão hoteleira e gestão de alojamento local.
+      Um dia de networking, conhecimento e estratégias para transformar a sua gestão hoteleira, gestão de alojamento local e o setor imobiliário.
     </p>
     
     <div class="hero-details animate-fadeInUp delay-4">
@@ -49,7 +49,19 @@
         <span>Casa da Música, Sala 2 - Porto</span>
       </div>
     </div>
-    
+
+    <div class="sponsors-section animate-fadeInUp delay-4-5">
+      <p class="sponsors-title">Empresas Presentes</p>
+      <div class="sponsors-logos">
+        <img src="/images/sponsors/hostwise.svg" alt="HostWise" class="sponsor-logo" />
+        <img src="/images/sponsors/guesty.svg" alt="Guesty" class="sponsor-logo" />
+        <img src="/images/sponsors/pricelabs.svg" alt="PriceLabs" class="sponsor-logo" />
+        <img src="/images/sponsors/breezeway.svg" alt="Breezeway" class="sponsor-logo" />
+        <img src="/images/sponsors/airbnb.svg" alt="Airbnb" class="sponsor-logo" />
+        <img src="/images/sponsors/booking.svg" alt="Booking.com" class="sponsor-logo" />
+      </div>
+    </div>
+
     <a href="#inscricao" class="btn btn-primary hero-cta animate-fadeInUp delay-5">
       Inscreva-se Agora
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -109,7 +121,7 @@
 
   .hero-badge {
     display: inline-block;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     opacity: 0;
   }
 
@@ -127,8 +139,8 @@
   }
 
   .hero-logo {
-    max-width: 280px;
-    margin: 0 auto 2rem;
+    max-width: 180px;
+    margin: 0 auto 1.5rem;
     opacity: 0;
   }
 
@@ -138,9 +150,9 @@
   }
 
   .hero-title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(1.75rem, 4.5vw, 2.75rem);
     font-weight: 800;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--color-light);
     opacity: 0;
   }
@@ -151,9 +163,9 @@
   }
 
   .hero-subtitle {
-    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
     color: var(--color-gray-300);
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -164,20 +176,20 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
     opacity: 0;
   }
 
   .detail-item {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem 1.25rem;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    font-size: 0.95rem;
+    font-size: 0.875rem;
     backdrop-filter: blur(10px);
   }
 
@@ -186,10 +198,47 @@
     flex-shrink: 0;
   }
 
+  .sponsors-section {
+    margin-bottom: 1.5rem;
+    opacity: 0;
+  }
+
+  .sponsors-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-gray-400);
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .sponsors-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .sponsor-logo {
+    height: 26px;
+    width: auto;
+    opacity: 0.8;
+    filter: brightness(0) invert(1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .sponsor-logo:hover {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
   .hero-cta {
     opacity: 0;
-    font-size: 1.1rem;
-    padding: 1.25rem 2.5rem;
+    font-size: 1rem;
+    padding: 1rem 2rem;
   }
 
   .scroll-indicator {
@@ -228,15 +277,59 @@
   }
 
   @media (max-width: 768px) {
+    .hero-content {
+      padding: 1.5rem 1rem;
+    }
+
+    .hero-logo {
+      max-width: 140px;
+      margin-bottom: 1rem;
+    }
+
+    .hero-badge {
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-subtitle {
+      margin-bottom: 1.25rem;
+      font-size: 0.9rem;
+    }
+
     .hero-details {
       flex-direction: column;
       align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
     }
 
     .detail-item {
       width: 100%;
-      max-width: 300px;
+      max-width: 280px;
       justify-content: center;
+      padding: 0.5rem 0.875rem;
+      font-size: 0.8rem;
+    }
+
+    .sponsors-logos {
+      gap: 1.25rem;
+      max-width: 100%;
+    }
+
+    .sponsor-logo {
+      height: 22px;
+    }
+
+    .sponsors-section {
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-cta {
+      font-size: 0.9rem;
+      padding: 0.875rem 1.75rem;
     }
   }
 </style>

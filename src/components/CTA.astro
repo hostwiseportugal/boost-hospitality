@@ -13,9 +13,49 @@
         Pronto para impulsionar o seu negócio?
       </h2>
       <p class="cta-text">
-        Junte-se a nós no dia 25 de Março na Casa da Música e faça parte 
+        Junte-se a nós no dia 25 de Março na Casa da Música e faça parte
         deste evento exclusivo. Vagas limitadas!
       </p>
+
+      <div class="pricing-section">
+        <h3 class="pricing-title">Bilhetes</h3>
+        <div class="pricing-cards">
+          <div class="pricing-card early-bird">
+            <div class="pricing-badge">Early Bird - Vagas Limitadas!</div>
+            <div class="pricing-amount">
+              <span class="currency">€</span>
+              <span class="price">49</span>
+            </div>
+            <p class="pricing-description">Até 31 de Janeiro</p>
+          </div>
+          <div class="pricing-card">
+            <div class="pricing-amount">
+              <span class="currency">€</span>
+              <span class="price">69</span>
+            </div>
+            <p class="pricing-description">Até 28 de Fevereiro</p>
+          </div>
+          <div class="pricing-card">
+            <div class="pricing-amount">
+              <span class="currency">€</span>
+              <span class="price">99</span>
+            </div>
+            <p class="pricing-description">Março</p>
+          </div>
+        </div>
+<!--
+        <div class="pricing-features-card">
+          <h4 class="features-title">O que está incluído</h4>
+          <ul class="pricing-features">
+            <li>Acesso total ao evento</li>
+            <li>Coffee break incluído</li>
+            <li>Welcome kit</li>
+          </ul>
+        </div>
+        -->
+      </div>
+
+
       <div class="cta-details">
         <div class="cta-detail">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -129,8 +169,141 @@
   .cta-text {
     font-size: 1.25rem;
     color: var(--color-gray-300);
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
     line-height: 1.7;
+  }
+
+  .pricing-section {
+    margin-bottom: 3rem;
+  }
+
+  .pricing-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-light);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .pricing-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2.5rem 1.5rem 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 201, 167, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .pricing-card.early-bird {
+    border: 2px solid var(--color-accent);
+    background: rgba(0, 201, 167, 0.08);
+    transform: scale(1.05);
+    box-shadow: 0 10px 40px rgba(0, 201, 167, 0.2);
+  }
+
+  .pricing-card.early-bird:hover {
+    transform: scale(1.05) translateY(-4px);
+  }
+
+  .pricing-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-accent);
+    color: var(--color-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    white-space: nowrap;
+  }
+
+  .pricing-amount {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .currency {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-top: 0.5rem;
+  }
+
+  .price {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--color-light);
+    line-height: 1;
+  }
+
+  .pricing-description {
+    font-size: 0.95rem;
+    color: var(--color-gray-400);
+    margin-bottom: 0;
+  }
+
+  .pricing-features-card {
+    max-width: 600px;
+    margin: 2.5rem auto 0;
+    padding: 2rem 2.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    text-align: center;
+  }
+
+  .features-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .pricing-features li {
+    font-size: 0.95rem;
+    color: var(--color-gray-300);
+    padding-left: 1.75rem;
+    position: relative;
+    text-align: left;
+  }
+
+  .pricing-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: bold;
+    font-size: 1.1rem;
   }
 
   .cta-details {
@@ -187,7 +360,88 @@
     color: var(--color-gray-500);
   }
 
+  @media (max-width: 1024px) {
+    .pricing-cards {
+      gap: 1.25rem;
+    }
+
+    .pricing-card.early-bird {
+      transform: scale(1.02);
+    }
+
+    .pricing-card.early-bird:hover {
+      transform: scale(1.02) translateY(-4px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .pricing-cards {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+    }
+
+    .pricing-card {
+      padding: 2rem 1.25rem;
+    }
+
+    .pricing-card.early-bird {
+      transform: scale(1);
+    }
+
+    .pricing-card.early-bird:hover {
+      transform: translateY(-4px);
+    }
+
+    .price {
+      font-size: 3rem;
+    }
+
+    .pricing-features {
+      grid-template-columns: 1fr;
+      gap: 0.875rem;
+    }
+
+    .pricing-features-card {
+      padding: 1.75rem 1.5rem;
+    }
+  }
+
   @media (max-width: 640px) {
+    .cta-text {
+      font-size: 1.1rem;
+    }
+
+    .pricing-title {
+      font-size: 1.25rem;
+    }
+
+    .pricing-badge {
+      font-size: 0.7rem;
+      padding: 0.35rem 0.85rem;
+    }
+
+    .price {
+      font-size: 2.5rem;
+    }
+
+    .currency {
+      font-size: 1.25rem;
+    }
+
+    .pricing-features-card {
+      padding: 1.5rem 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .features-title {
+      font-size: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .pricing-features li {
+      font-size: 0.875rem;
+    }
+
     .cta-details {
       flex-direction: column;
       align-items: center;
