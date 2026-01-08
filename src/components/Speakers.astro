@@ -34,19 +34,19 @@ const speakers = [
   },
   {
     id: 5,
-    name: "Diogo Cardoso",
-    role: "Revenue Manager",
-    company: "Host Wise",
-    image: "/images/speakers/diogo-cardoso.jpg",
-    bio: "Diogo Cardoso é especialista em Revenue Management e otimização de preços na Host Wise. Com profundo conhecimento em estratégias de pricing dinâmico, tem ajudado dezenas de proprietários a maximizar os seus rendimentos."
+    name: "Fausto Vieira da Silva",
+    role: "SC Manager, Europe & Brazil",
+    company: "PriceLabs",
+    image: "/images/speakers/fausto-vieira-silva.jpeg",
+    bio: "Fausto Vieira da Silva é SC Manager Europe & Brazil na PriceLabs, onde lidera parcerias e estratégias que ajudam empresas de short-term rentals a otimizar receita e operações em mercados europeus e no Brasil. Com experiência em revenue management e soluções tecnológicas para alojamento, tem um papel ativo no desenvolvimento da presença e impacto da PriceLabs no setor global de hospitalidade e turismo."
   },
   {
     id: 6,
-    name: "Diogo China",
-    role: "Operations",
+    name: "Diogo Cardoso",
+    role: "Chief Revenue Officer (CRO)",
     company: "Host Wise",
     image: "/images/speakers/diogo-china.jpg",
-    bio: "Diogo China é responsável pelas operações na Host Wise, garantindo que cada hóspede tenha uma experiência excecional. A sua atenção ao detalhe e foco no cliente são fundamentais para o sucesso da empresa."
+    bio: "Diogo Cardoso é especialista em Revenue Management e otimização de preços na Host Wise. Com profundo conhecimento em estratégias de pricing dinâmico, tem ajudado dezenas de proprietários a maximizar os seus rendimentos."
   }
 ];
 ---
@@ -83,6 +83,19 @@ const speakers = [
         </button>
       ))}
     </div>
+
+    <div class="speakers-actions">
+      <a href="#inscricao" class="btn btn-primary">
+        Reservar o Meu Lugar
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+      <a href="#agenda" class="btn btn-outline">
+        Ver a Agenda
+      </a>
+    </div>
   </div>
 
   <!-- Modal -->
@@ -114,7 +127,7 @@ const speakers = [
 
 <style>
   .speakers {
-    background: var(--color-gray-900);
+    background: var(--color-dark);
     position: relative;
   }
 
@@ -141,6 +154,15 @@ const speakers = [
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .speakers-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 
   .speaker-card {
@@ -337,6 +359,16 @@ const speakers = [
   @media (max-width: 640px) {
     .speakers-grid {
       grid-template-columns: 1fr;
+    }
+
+    .speakers-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .speakers-actions .btn {
+      width: 100%;
+      max-width: 320px;
     }
 
     .modal-header {

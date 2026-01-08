@@ -73,7 +73,6 @@ const sponsorCategories = [
                 <div class="sponsor-logo">
                   <img src={sponsor.logo} alt={sponsor.name} />
                 </div>
-                <span class="sponsor-name">{sponsor.name}</span>
               </a>
             ))}
           </div>
@@ -173,10 +172,10 @@ const sponsorCategories = [
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2.5rem 2rem;
+    padding: 2rem 1.5rem;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
+    border-radius: 12px;
     transition: all 0.3s ease;
   }
 
@@ -224,18 +223,6 @@ const sponsorCategories = [
     object-fit: contain;
     filter: brightness(0.8);
     transition: filter 0.3s ease;
-  }
-
-  .sponsor-name {
-    margin-top: 1rem;
-    font-size: 0.875rem;
-    color: var(--color-gray-500);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .sponsor-card:hover .sponsor-name {
-    opacity: 1;
   }
 
   .sponsors-cta {
@@ -286,10 +273,6 @@ const sponsorCategories = [
     .grid-partners .sponsor-logo {
       width: 140px;
       height: 45px;
-    }
-
-    .sponsor-name {
-      opacity: 1;
     }
   }
 </style>
