@@ -8,20 +8,17 @@
   </div>
   
   <div class="hero-content">
-    <div class="hero-badge animate-fadeInUp">
-      <span class="badge-text">Evento Exclusivo</span>
-    </div>
     
     <div class="hero-logo animate-fadeInUp delay-1">
       <img src="/images/boost-hospitality.webp" alt="Boost Hospitality" />
     </div>
     
     <h1 class="hero-title animate-fadeInUp delay-2">
-      Impulsione o seu negócio de <span class="highlight">Alojamento</span>
+      <p></p>A hotelaria como a conhecemos está a perder margem.</p> <span class="highlight">2026 vai separar quem escala de quem fica para trás.</span>
     </h1>
     
     <p class="hero-subtitle animate-fadeInUp delay-3">
-      Um dia de networking, conhecimento e estratégias para transformar a sua gestão hoteleira, gestão de alojamento local e o setor imobiliário.
+      Um evento sobre estratégia, tecnologia e investimento para quem quer continuar a crescer num mercado cada vez mais competitivo.
     </p>
     
     <div class="hero-details animate-fadeInUp delay-4">
@@ -50,22 +47,45 @@
       </div>
     </div>
 
-    <div class="sponsors-section animate-fadeInUp delay-4-5">
-      <p class="sponsors-title">Empresas Presentes</p>
-      <div class="sponsors-logos">
-        <img src="/images/sponsors/hostwise.svg" alt="HostWise" class="sponsor-logo" />
-        <img src="/images/sponsors/guesty.svg" alt="Guesty" class="sponsor-logo" />
-        <img src="/images/sponsors/pricelabs.svg" alt="PriceLabs" class="sponsor-logo" />
-      </div>
-    </div>
-
     <a href="https://luma.com/vi4ngemr" class="btn btn-primary hero-cta animate-fadeInUp delay-5">
-      Inscreva-se Agora
+      Garantir o Meu Lugar
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <line x1="5" y1="12" x2="19" y2="12"></line>
         <polyline points="12 5 19 12 12 19"></polyline>
       </svg>
     </a>
+
+    <div class="hero-discount animate-fadeInUp delay-5">
+      <div class="discount-badge">50% OFF</div>
+      <p class="discount-text">Usa o código <span class="discount-code">META</span> no checkout e garante 50% de desconto</p>
+    </div>
+
+    <div class="hero-stats animate-fadeInUp delay-4-5">
+      <div class="stat-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        <span>Mais de <strong>125 participantes</strong> inscritos.</span><strong>Vagas limitadas.</strong>
+      </div>
+    </div> 
+
+    <!--<div class="sponsors-section animate-fadeInUp delay-4-5">
+      <p class="sponsors-title">Patrocinadores</p>
+      <div class="sponsors-logos">
+        <img src="/images/sponsors/hostwise.svg" alt="HostWise" class="sponsor-logo" />
+        <img src="/images/sponsors/guesty.svg" alt="Guesty" class="sponsor-logo" />
+        <img src="/images/sponsors/pricelabs.svg" alt="PriceLabs" class="sponsor-logo" />
+      </div>
+    </div> -->
+
+  
+
+    
+
+    
   </div>
   
   <div class="scroll-indicator">
@@ -232,6 +252,69 @@
     transform: scale(1.05);
   }
 
+  .hero-stats {
+    margin-bottom: 1rem;
+    opacity: 0;
+  }
+
+  .stat-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    font-size: 0.875rem;
+    color: var(--color-gray-300);
+  }
+
+  .stat-item svg {
+    color: var(--color-accent);
+  }
+
+  .stat-item strong {
+    color: var(--color-light);
+  }
+
+  .hero-discount {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .discount-badge {
+    background: var(--color-accent);
+    color: var(--color-dark);
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0.4rem 0.75rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .discount-text {
+    font-size: 0.95rem;
+    color: var(--color-gray-300);
+    margin: 0;
+  }
+
+  .discount-code {
+    background: rgba(0, 201, 167, 0.2);
+    color: var(--color-accent);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-family: monospace;
+    letter-spacing: 0.1em;
+  }
+
   .hero-cta {
     opacity: 0;
     font-size: 1rem;
@@ -321,7 +404,26 @@
     }
 
     .sponsors-section {
+      margin-bottom: 1rem;
+    }
+
+    .hero-stats {
+      margin-bottom: 0.75rem;
+    }
+
+    .stat-item {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.875rem;
+    }
+
+    .hero-discount {
       margin-bottom: 1.25rem;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .discount-text {
+      font-size: 0.875rem;
     }
 
     .hero-cta {

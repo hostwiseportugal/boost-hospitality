@@ -19,15 +19,22 @@
 
       <div class="pricing-section">
         <h3 class="pricing-title">Bilhetes</h3>
-        <div class="pricing-cards">
-          <!--<div class="pricing-card early-bird">
-            <div class="pricing-badge">Early Bird - Vagas Limitadas!</div>
-            <div class="pricing-amount">
-              <span class="currency">€</span>
-              <span class="price">49</span>
+
+        <div class="discount-highlight">
+          <div class="discount-card">
+            <div class="discount-badge-cta">50% OFF</div>
+            <div class="discount-pricing">
+              <span class="original-price">€69,90</span>
+              <div class="final-price">
+                <span class="currency">€</span>
+                <span class="price">34,95</span>
+              </div>
             </div>
-            <p class="pricing-description">Até 31 de Janeiro</p>
-          </div>-->
+            <p class="discount-info">Usa o código <span class="discount-code">META</span> no checkout</p>
+          </div>
+        </div>
+
+        <!--<div class="pricing-cards">
           <div class="pricing-card">
             <div class="pricing-amount">
               <span class="currency">€</span>
@@ -43,17 +50,7 @@
             <p class="pricing-description">Março</p>
           </div>
         </div>
-<!--
-        <div class="pricing-features-card">
-          <h4 class="features-title">O que está incluído</h4>
-          <ul class="pricing-features">
-            <li>Acesso total ao evento</li>
-            <li>Coffee break incluído</li>
-            <li>Welcome kit</li>
-          </ul>
-        </div>
-        -->
-      </div>
+      </div> -->
 
 
       <div class="cta-details">
@@ -183,6 +180,81 @@
     color: var(--color-light);
     margin-bottom: 2rem;
     text-align: center;
+  }
+
+  .discount-highlight {
+    margin-bottom: 2rem;
+  }
+
+  .discount-card {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(0, 201, 167, 0.1);
+    border: 2px solid var(--color-accent);
+    border-radius: 16px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 201, 167, 0.2);
+  }
+
+  .discount-badge-cta {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-accent);
+    color: var(--color-dark);
+    font-size: 0.875rem;
+    font-weight: 800;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .discount-pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .original-price {
+    font-size: 1.25rem;
+    color: var(--color-gray-400);
+    text-decoration: line-through;
+  }
+
+  .final-price {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .final-price .currency {
+    font-size: 1.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .final-price .price {
+    font-size: 4rem;
+  }
+
+  .discount-info {
+    font-size: 1rem;
+    color: var(--color-gray-300);
+    margin: 0;
+  }
+
+  .discount-code {
+    background: rgba(0, 201, 167, 0.25);
+    color: var(--color-accent);
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-family: monospace;
+    letter-spacing: 0.1em;
   }
 
   .pricing-cards {
@@ -413,6 +485,31 @@
 
     .pricing-title {
       font-size: 1.25rem;
+    }
+
+    .discount-card {
+      padding: 1.75rem 1.25rem;
+    }
+
+    .discount-badge-cta {
+      font-size: 0.75rem;
+      padding: 0.4rem 1rem;
+    }
+
+    .original-price {
+      font-size: 1.1rem;
+    }
+
+    .final-price .price {
+      font-size: 3rem;
+    }
+
+    .final-price .currency {
+      font-size: 1.5rem;
+    }
+
+    .discount-info {
+      font-size: 0.9rem;
     }
 
     .pricing-badge {

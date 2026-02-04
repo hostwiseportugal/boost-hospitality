@@ -1,0 +1,183 @@
+---
+const audiences = [
+  {
+    icon: "home",
+    title: "Proprietários de Alojamento Local",
+    description: "Se sente que trabalha mais e ganha menos, este evento ajuda a perceber onde está a perder margem e que decisões precisa de tomar para manter a rentabilidade em 2026, mesmo num mercado mais competitivo."
+  },
+  {
+    icon: "brain",
+    title: "Operadores e gestores de propriedades",
+    description: "Crescer sem sistemas custa dinheiro. Aqui vai aprender como escalar com processos, dados e tecnologia, evitando o caos operacional que destrói margens à medida que o portefólio cresce."
+  },
+  {
+    icon: "hotel",
+    title: "Hotelaria clássica e empreendimentos turísticos",
+    description: "Novos modelos estão a ganhar terreno. Este evento mostra o que faz sentido adaptar, o que ignorar e como manter competitividade, sem perder identidade nem controlo operacional."
+  },
+  {
+    icon: "coins",
+    title: "Investidores em hospitalidade",
+    description: "O retorno não desapareceu — mudou de lugar. Descubra onde estão hoje as oportunidades reais, os riscos invisíveis e os modelos mais resilientes no setor da hospitalidade para os próximos anos."
+  }
+];
+---
+
+<section class="audience section" id="para-quem">
+  <div class="container">
+    <div class="audience-header">
+      <span class="audience-label">Para Quem</span>
+      <h2 class="section-title">Este evento é para si?</h2>
+      <p class="section-subtitle">
+        Se se identifica com algum destes perfis, este é o evento certo para si
+      </p>
+    </div>
+
+    <div class="audience-grid">
+      {audiences.map((audience) => (
+        <div class="audience-card">
+          <div class="audience-icon">
+            {audience.icon === "home" && (
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+            )}
+            {audience.icon === "brain" && (
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"></path>
+                <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"></path>
+              </svg>
+            )}
+            {audience.icon === "hotel" && (
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Z"></path>
+                <path d="M9 22v-4h6v4"></path>
+                <path d="M8 6h.01"></path>
+                <path d="M16 6h.01"></path>
+                <path d="M12 6h.01"></path>
+                <path d="M12 10h.01"></path>
+                <path d="M12 14h.01"></path>
+                <path d="M16 10h.01"></path>
+                <path d="M16 14h.01"></path>
+                <path d="M8 10h.01"></path>
+                <path d="M8 14h.01"></path>
+              </svg>
+            )}
+            {audience.icon === "coins" && (
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="8" cy="8" r="6"></circle>
+                <path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path>
+                <path d="M7 6h1v4"></path>
+                <path d="m16.71 13.88.7.71-2.82 2.82"></path>
+              </svg>
+            )}
+          </div>
+          <h3 class="audience-title">{audience.title}</h3>
+          <p class="audience-description">{audience.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .audience {
+    background: var(--color-gray-900);
+    position: relative;
+  }
+
+  .audience-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .audience-label {
+    display: inline-block;
+    color: var(--color-accent);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+  }
+
+  .audience-header .section-subtitle {
+    margin: 0 auto;
+  }
+
+  .audience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .audience-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .audience-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(0, 201, 167, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .audience-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 201, 167, 0.1);
+    border: 1px solid rgba(0, 201, 167, 0.2);
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    color: var(--color-accent);
+  }
+
+  .audience-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-light);
+    margin-bottom: 1rem;
+  }
+
+  .audience-description {
+    font-size: 1rem;
+    color: var(--color-gray-400);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .audience-grid {
+      gap: 1.5rem;
+    }
+
+    .audience-card {
+      padding: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .audience-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .audience-card {
+      padding: 2rem 1.5rem;
+    }
+
+    .audience-title {
+      font-size: 1.125rem;
+    }
+
+    .audience-description {
+      font-size: 0.95rem;
+    }
+  }
+</style>
